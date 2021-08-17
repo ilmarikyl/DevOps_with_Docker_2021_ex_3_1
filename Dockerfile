@@ -1,14 +1,15 @@
 FROM ubuntu:18.04
 
-WORKDIR /mydir
+EXPOSE 5000
+
+RUN apt-get update && apt-get install -y curl
+RUN curl -sL https://deb.nodesource.com/setup_lts.x | bash -
+RUN apt install -y nodejs
 
 COPY . .
 
-RUN apt-get update && apt-get install -y curl python 
-RUN curl -L https://yt-dl.org/downloads/latest/youtube-dl -o /usr/local/bin/youtube-dl 
-RUN chmod a+x /usr/local/bin/youtube-dl 
+RUN npm install
+RUN npm run build
+RUN npm install -g serve
 
-ENV LC_ALL=C.UTF-8
-
-# Replacing CMD with ENTRYPOINT
-ENTRYPOINT ["/usr/local/bin/youtube-dl"] 
+CMD ["serve", "-s", "-l", "5000", "build"]
