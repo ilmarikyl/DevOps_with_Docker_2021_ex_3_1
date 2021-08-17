@@ -1,4 +1,4 @@
-name: Release Italyzer # Name of the workflow
+name: Release youtube-dl_3.1 # Name of the workflow
 
 # On a push to the branch named master
 on:
