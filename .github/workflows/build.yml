@@ -26,4 +26,4 @@ jobs:
       uses: docker/build-push-action@v2
       with:
         push: true
-        tags: ilmariky/italyzer:latest
+        tags: ilmariky/youtube-dl_3.1:latest

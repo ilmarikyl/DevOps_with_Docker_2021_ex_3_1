@@ -1,13 +1,12 @@
-FROM python:3.6.13-buster
+FROM ubuntu:18.04
 
-WORKDIR /usr/src/app
+WORKDIR /mydir
 
-COPY . .
+RUN apt-get update && apt-get install -y curl python 
+RUN curl -L https://yt-dl.org/downloads/latest/youtube-dl -o /usr/local/bin/youtube-dl 
+RUN chmod a+x /usr/local/bin/youtube-dl 
 
-RUN pip install --upgrade pip
+ENV LC_ALL=C.UTF-8
 
-RUN pip install --trusted-host pypi.python.org -r requirements.txt
-
-RUN apt-get install tk
-
-CMD ["python", "textui_italyzer.py"]
+# Replacing CMD with ENTRYPOINT
+ENTRYPOINT ["/usr/local/bin/youtube-dl"] 
