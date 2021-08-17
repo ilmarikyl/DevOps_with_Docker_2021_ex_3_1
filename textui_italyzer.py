@@ -25,6 +25,7 @@ def main():
     print('Welcome to Italyzer - a morphological analyzer for Italian verbs')
     print('-'*100)
     print('')
+    print('Does this show up?')
 
     while True:
         usinput = input('Input a verb form: ')
