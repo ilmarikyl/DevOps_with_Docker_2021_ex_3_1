@@ -28,7 +28,7 @@ def main():
 
     while True:
         usinput = input('Input a verb form: ')
-        print()
+        print("")
 
         if usinput == '':
             break
