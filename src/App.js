@@ -5,7 +5,7 @@ import ExercisesList from './components/ExercisesList'
 const App = () => (
   <>
     <NavBar />
-    <ExercisesList />
+    <div>Hello World</div>
   </>
 )
 
