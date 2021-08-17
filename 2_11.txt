@@ -1,4 +1,0 @@
-I containerized and set up a development environment for an old NLP project made to analyze Italian verbs. It's made with Python and the project initially had two UIs: text-based and graphical, but GUIs within containers seemed like quite a hassle, so I focused on having only the text-based working. I use KeepFresh, a Python package similar to Nodemon, to restart the Python script in the container whenever a file with .py extension is modified on the host machine.
-
-The program can be run in the container with:
-"docker-compose build italyzer-dev-env && docker-compose run --rm italyzer-dev-env"

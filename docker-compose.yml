@@ -1,9 +1,9 @@
 version: '3.5'
 
 services:
-  italyzer-dev-env:
+  italyzer:
     image: ilmariky/italyzer
-    container_name: italyzer-dev-env
+    container_name: italyzer
 
   watchtower:
     image: containrrr/watchtower
